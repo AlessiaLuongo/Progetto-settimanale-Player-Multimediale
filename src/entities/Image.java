@@ -11,8 +11,12 @@ public class Image extends ElementMultimedia implements Visible {
     }
 
     public void show(){
+        String howMuchBrightness = "";
+        for (int i = 0; i < brightness; i++) {
+            howMuchBrightness = howMuchBrightness + "*";
+        }
 
-        System.out.println("This is the picture of: " + title + "at brigntness " + brightness);
+        System.out.println("This is the picture of: " + title + " at brigntness " + howMuchBrightness);
 }
 
     //GETTERS AND SETTERS
