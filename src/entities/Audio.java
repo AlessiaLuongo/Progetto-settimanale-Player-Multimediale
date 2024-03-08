@@ -2,6 +2,9 @@ package entities;
 
 import interfaces.Playable;
 
+import java.util.Objects;
+import java.util.Scanner;
+
 public class Audio extends ElementMultimedia implements Playable {
     private  int duration;
     private int volume;
@@ -51,6 +54,19 @@ public class Audio extends ElementMultimedia implements Playable {
 
     @Override
     public void volumeUp() {
+        System.out.println("Insert a number to volume up");
+        Scanner scannerVolumeUp = new Scanner(System.in);
+        String numberToVolumeUp = scannerVolumeUp.nextLine();
+        System.out.println("Vuoi aumentare il volume di: " + numberToVolumeUp + "?");
+        Scanner scannerYesOrNoQuestion = new Scanner(System.in);
+        String scannerAnswer = scannerVolumeUp.nextLine();
+        if (Objects.equals(scannerAnswer, "y")) {
+            System.out.println("Volume impostato a " + " ");
+        }else {
+            System.out.println("Cancel");
+        }
+
+
 
     }
 
