@@ -12,5 +12,7 @@ public class Main {
     Image image2 = new Image("MeatLoaf");
 
         canzone1.play();
+        video1.play();
+        image1.show();
     }
 }

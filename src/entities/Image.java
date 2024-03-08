@@ -10,9 +10,10 @@ public class Image extends ElementMultimedia implements Visible {
         this.brightness = 10;
     }
 
-    public String show(){
-        return null;
-    };
+    public void show(){
+
+        System.out.println("This is the picture of: " + title + "at brigntness " + brightness);
+}
 
     //GETTERS AND SETTERS
 
