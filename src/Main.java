@@ -20,40 +20,55 @@ public class Main {
     Image image3 = new Image("Elvis Presley");
 
     ElementMultimedia[] multimediaDatabase = {canzone1, canzone2, canzone3, video1, video2, video3, image1, image1, image2, image3}; */
-    String[] playList = new String[5];
-    int currentFilesInArray = 0;
-    while (currentFilesInArray < 5){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Which kind of file are you searching for? Type -v- for Video, -s- for Song or -i- for Image or -x- for Exit");
-        String typeOfFile = scanner.nextLine();
-        switch (typeOfFile){
-            case "v":
-                createVideo(scanner, playList, currentFilesInArray);
-                currentFilesInArray++;
-                System.out.println("video");break;
-            case "s":
-                createAudio(scanner, playList, currentFilesInArray);
-                currentFilesInArray++;
-                System.out.println("Song");break;
-            case "i":
-                createImage(scanner, playList, currentFilesInArray);
-                currentFilesInArray++;
-                System.out.println("Image");break;
-            case "x":
-                System.out.println("Exit");break;
-            default:
-                System.out.println("BRAV* you broke the player!");
-                break;
+
+
+        String[] playList = new String[5];
+        int currentFilesInArray = 0;
+        String typeOfFile = null;
+        while (currentFilesInArray < 5) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Which kind of file are you searching for? Type -v- for Video, -s- for Song or -i- for Image or -x- for Exit");
+            typeOfFile = scanner.nextLine();
+
+            switch (typeOfFile) {
+                case "v":
+                    createVideo(scanner, playList, currentFilesInArray);
+                    currentFilesInArray++;
+                    System.out.println("video");
+                    break;
+                case "s":
+                    createAudio(scanner, playList, currentFilesInArray);
+                    currentFilesInArray++;
+                    System.out.println("Song");
+                    break;
+                case "i":
+                    createImage(scanner, playList, currentFilesInArray);
+                    currentFilesInArray++;
+                    System.out.println("Image");
+                    break;
+                case "x":
+                    System.out.println("Exit");
+                    break;
+                default:
+                    System.out.println("BRAV* you broke the player!");
+                    break;
+            }
         }
-    }
 
         System.out.println("Your Playlist:");
-        for (int i = 0; i < playList.length; i++) {
+        int i;
+        for (i = 0; i < playList.length; i++) {
             System.out.println(playList[i]);
         }
-        }
 
-    public static void createVideo(Scanner scannerVideo, String[] playListVideo, int currentFilesInArrayVideo){
+        Scanner scannerChooseFile = new Scanner(System.in);
+        System.out.println("Choose a file: ");
+        String selectedFile = scannerChooseFile.nextLine();
+    }
+
+
+//METODI PER CREARE I FILE
+public static void createVideo(Scanner scannerVideo, String[] playListVideo, int currentFilesInArrayVideo){
         System.out.println("Enter Video name: ");
         System.out.println("Enter Video duration: ");
         playListVideo[currentFilesInArrayVideo] = String.valueOf(new Video(scannerVideo.nextLine(), scannerVideo.nextInt()));
