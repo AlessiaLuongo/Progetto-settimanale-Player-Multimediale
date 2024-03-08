@@ -13,7 +13,7 @@ public class Audio extends ElementMultimedia implements Playable {
     public Audio(String title, int duration) {
         super(title);
         this.duration = duration;
-        this.volume = 10;
+        this.volume = getVolume();
     }
 
 
@@ -23,12 +23,11 @@ public class Audio extends ElementMultimedia implements Playable {
         return duration;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
 
     public int getVolume() {
-        return volume;
+        for (int i = 0; i < duration; i++) {
+        }
+        return (10);
     }
 
     public void setVolume(int volume) {
@@ -40,8 +39,12 @@ public class Audio extends ElementMultimedia implements Playable {
 // INTERFACES
     @Override
     public void play() {
+        for (int i = 0; i < duration; i++) {
+            System.out.println("Stai ascoltando: " + title + "a volume: " + volume);
+        }
 
-    }
+
+    };
 
     @Override
     public void volumeUp() {
@@ -55,7 +58,7 @@ public class Audio extends ElementMultimedia implements Playable {
 
     @Override
     public String toString() {
-        return "Audio{" +
+        return "Song{" +
                 "duration=" + duration +
                 ", volume=" + volume +
                 ", title='" + title + '\'' +

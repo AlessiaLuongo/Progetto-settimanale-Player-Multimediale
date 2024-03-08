@@ -1,14 +1,13 @@
 package entities;
 
-public class Image extends ElementMultimedia {
+import interfaces.Visible;
+
+public class Image extends ElementMultimedia implements Visible {
     private int brightness;
+
     public Image(String title) {
         super(title);
-    }
-
-    public Image(String title, int brightness) {
-        super(title);
-        this.brightness = brightness;
+        this.brightness = 10;
     }
 
     public String show(){
@@ -31,5 +30,15 @@ public class Image extends ElementMultimedia {
                 "brightness=" + brightness +
                 ", title='" + title + '\'' +
                 '}';
+    }
+
+    @Override
+    public void brightnessUp() {
+
+    }
+
+    @Override
+    public void brightnessDown() {
+
     }
 }
