@@ -14,6 +14,9 @@ public class Main {
         canzone1.play();
         video1.play();
         image1.show();
+        canzone1.volumeDown();
         canzone1.volumeUp();
+        System.out.println(canzone1);
+        canzone1.play();
     }
 }

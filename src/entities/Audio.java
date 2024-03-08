@@ -53,25 +53,58 @@ public class Audio extends ElementMultimedia implements Playable {
     };
 
     @Override
+
     public void volumeUp() {
-        System.out.println("Insert a number to volume up");
+        int currentVolume = this.volume;
+
+        System.out.println("Insert a number to volume up:");
         Scanner scannerVolumeUp = new Scanner(System.in);
-        String numberToVolumeUp = scannerVolumeUp.nextLine();
-        System.out.println("Vuoi aumentare il volume di: " + numberToVolumeUp + "?");
+        int numberToVolumeUp = scannerVolumeUp.nextInt();
+        System.out.println("Do you want to increase the volume of: " + numberToVolumeUp + "? (y/n)");
+
         Scanner scannerYesOrNoQuestion = new Scanner(System.in);
-        String scannerAnswer = scannerVolumeUp.nextLine();
-        if (Objects.equals(scannerAnswer, "y")) {
-            System.out.println("Volume impostato a " + " ");
-        }else {
+        String answer = scannerYesOrNoQuestion.nextLine();
+
+        if (answer.equals("y")) {
+            if (currentVolume + numberToVolumeUp >= 10) {;
+                System.out.println("Volume at maximum, set at 10");
+                setVolume(10);
+            } else{
+                int newVolume = currentVolume + numberToVolumeUp;
+                this.volume = newVolume;
+                setVolume(newVolume);
+                System.out.println("Volume set at " + newVolume);
+            }
+        } else {
             System.out.println("Cancel");
         }
-
-
-
     }
 
     @Override
-    public void VolumeDown() {
+    public void volumeDown() {
+        int currentVolume = this.volume;
+
+        System.out.println("Insert a number to volume down:");
+        Scanner scannerVolumeDown = new Scanner(System.in);
+        int numberToVolumeDown = scannerVolumeDown.nextInt();
+        System.out.println("Do you want to reduce the volume of: " + numberToVolumeDown + "? (y/n)");
+
+        Scanner scannerYesOrNoQuestion = new Scanner(System.in);
+        String answer = scannerYesOrNoQuestion.nextLine();
+
+        if (answer.equals("y")) {
+            if (currentVolume - numberToVolumeDown <= 0) {;
+                System.out.println("volume at minimum, set at 0");
+                setVolume(0);
+            } else{
+                int newVolume = currentVolume - numberToVolumeDown;
+                this.volume = newVolume;
+                setVolume(newVolume);
+                System.out.println("Volume set at " + newVolume);
+            }
+        } else {
+            System.out.println("Cancel");
+        }
 
     }
 

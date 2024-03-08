@@ -67,7 +67,7 @@ public class Video extends ElementMultimedia implements Playable, Visible {
     }
 
     @Override
-    public void VolumeDown() {
+    public void volumeDown() {
 
     }
 
