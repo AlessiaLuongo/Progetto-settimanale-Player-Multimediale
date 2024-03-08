@@ -152,10 +152,10 @@ public class Video extends ElementMultimedia implements Playable, Visible {
     public void brightnessDown() {
         int currentBrightness = this.brightness;
 
-        System.out.println("Insert a number to reduce the brightness:");
+        System.out.println("Insert a number to reduce the brightness of this Video:");
         Scanner scannerBrightnessDown = new Scanner(System.in);
         int numberToBrightnessDown = scannerBrightnessDown.nextInt();
-        System.out.println("Do you want to reduce the brightness of: " + numberToBrightnessDown + "? (y/n)");
+        System.out.println("Do you want to reduce the brightness of this Video: " + numberToBrightnessDown + "? (y/n)");
 
         Scanner scannerYesOrNoQuestion = new Scanner(System.in);
         String answer = scannerYesOrNoQuestion.nextLine();

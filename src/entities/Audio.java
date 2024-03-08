@@ -87,7 +87,7 @@ public class Audio extends ElementMultimedia implements Playable {
         System.out.println("Insert a number to volume down:");
         Scanner scannerVolumeDown = new Scanner(System.in);
         int numberToVolumeDown = scannerVolumeDown.nextInt();
-        System.out.println("Do you want to reduce the volume of: " + numberToVolumeDown + "? (y/n)");
+        System.out.println("Do you want to reduce the volume of : " + numberToVolumeDown + "? (y/n)");
 
         Scanner scannerYesOrNoQuestion = new Scanner(System.in);
         String answer = scannerYesOrNoQuestion.nextLine();

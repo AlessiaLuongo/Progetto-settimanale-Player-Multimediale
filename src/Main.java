@@ -26,5 +26,8 @@ public class Main {
         video1.brightnessUp();
         System.out.println(video1);
         video1.play();*/
+        /*image1.brightnessDown();
+        image1.brightnessUp();
+        image1.show();*/
     }
 }
