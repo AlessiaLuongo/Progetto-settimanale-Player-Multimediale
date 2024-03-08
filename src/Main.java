@@ -28,20 +28,15 @@ public class Main {
         String typeOfFile = scanner.nextLine();
         switch (typeOfFile){
             case "v":
-                System.out.println("Enter Video name: ");
-                System.out.println("Enter Video duration: ");
-                playList[currentFilesInArray] = String.valueOf(new Video(scanner.nextLine(), scanner.nextInt()));
+                createVideo(scanner, playList, currentFilesInArray);
                 currentFilesInArray++;
                 System.out.println("video");break;
             case "s":
-                System.out.println("Enter Song name: ");
-                System.out.println("Enter Song duration: ");
-                playList[currentFilesInArray] = String.valueOf(new Audio(scanner.nextLine(), scanner.nextInt()));
+                createAudio(scanner, playList, currentFilesInArray);
                 currentFilesInArray++;
                 System.out.println("Song");break;
             case "i":
-                System.out.println("Enter Image name: ");
-                playList[currentFilesInArray] = String.valueOf(new Image(scanner.nextLine()));
+                createImage(scanner, playList, currentFilesInArray);
                 currentFilesInArray++;
                 System.out.println("Image");break;
             case "x":
@@ -57,4 +52,20 @@ public class Main {
             System.out.println(playList[i]);
         }
         }
+
+    public static void createVideo(Scanner scannerVideo, String[] playListVideo, int currentFilesInArrayVideo){
+        System.out.println("Enter Video name: ");
+        System.out.println("Enter Video duration: ");
+        playListVideo[currentFilesInArrayVideo] = String.valueOf(new Video(scannerVideo.nextLine(), scannerVideo.nextInt()));
+    }
+    public static void createAudio(Scanner scannerSong, String[] playListSong, int currentFilesInArraySong){
+        System.out.println("Enter Song name: ");
+        System.out.println("Enter Song duration: ");
+        playListSong[currentFilesInArraySong] = String.valueOf(new Audio(scannerSong.nextLine(), scannerSong.nextInt()));
+    }
+    public static  void  createImage(Scanner scannerImage, String[] playListImage, int currentFilesInArrayImage){
+        System.out.println("Enter Image name: ");
+        playListImage[currentFilesInArrayImage] = String.valueOf(new Image(scannerImage.nextLine()));
+    }
+
     }
