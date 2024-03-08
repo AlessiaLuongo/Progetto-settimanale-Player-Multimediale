@@ -48,8 +48,16 @@ public class Video extends ElementMultimedia implements Playable, Visible {
 //INTERFACES
     @Override
     public void play() {
+        String howMuchVolume = "";
+        for (int i = 0; i < volume; i++) {
+            howMuchVolume = howMuchVolume + "!";
+        }
+        String howMuchBrightness = "";
+        for (int i = 0; i < brightness; i++) {
+            howMuchBrightness = howMuchBrightness + "*";
+        }
         for (int i = 0; i < duration; i++) {
-            System.out.println("You're watching: " + title + " at volume: " + volume + " and brigntness: " + brightness);
+            System.out.println("You're watching: " + title + " at volume: " + howMuchVolume + " and brigntness: " + howMuchBrightness);
         }
     }
 
